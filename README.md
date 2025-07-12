@@ -25,6 +25,8 @@ Questo repository contiene i seguenti script SQL:
 * **`schema.sql`**: Contiene i comandi `CREATE TABLE` per generare l'intera struttura del database, inclusi vincoli, chiavi primarie/esterne e indici.
 * **`data.sql`**: Contiene i comandi `INSERT INTO` per popolare il database con un set di dati di esempio realistici, necessari per testare le funzionalità.
 * **`queries.sql`**: Contiene 5 query SQL rappresentative che dimostrano la capacità del database di rispondere a domande di business complesse.
+* **`erDiagramm oppure Diagramma`**: per la sola visualizzazione in chiaro dello schema entità relazioni del nostro DataBase.
+
 
 ## Come Utilizzare gli Script
 
