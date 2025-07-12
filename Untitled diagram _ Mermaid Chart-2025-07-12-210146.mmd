@@ -1,0 +1,46 @@
+erDiagram
+    PASSEGGERO {
+        int id_passeggero PK
+        string nome
+        string cognome
+        string email UK
+    }
+    AUTOBUS {
+        string targa PK
+        string modello
+        int capacita
+    }
+    LINEA {
+        int id_linea PK
+        string codice_linea UK
+        string nome_linea
+    }
+    FERMATA {
+        int id_fermata PK
+        string nome_fermata
+        string comune
+    }
+    CORSA {
+        int id_corsa PK
+        datetime data_ora_partenza
+    }
+    BIGLIETTO {
+        int id_biglietto PK
+        datetime data_emissione
+        bool valido
+    }
+    ABBONAMENTO {
+        int id_abbonamento PK
+        string tipo "Settimanale, Mensile"
+        date data_inizio
+        date data_fine
+    }
+
+    PASSEGGERO ||--o{ BIGLIETTO : acquista
+    PASSEGGERO ||--o{ ABBONAMENTO : possiede
+    CORSA ||--|{ BIGLIETTO : "riguarda"
+    LINEA ||--o{ CORSA : "ha"
+    AUTOBUS ||--o{ CORSA : "opera"
+    LINEA ||--|{ LineeFermate : "è composta da"
+    FERMATA ||--|{ LineeFermate : "compone"
+    LINEA ||--o{ ABBONAMENTO : "valido per"
